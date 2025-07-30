@@ -1,3 +1,6 @@
+import User from '../models/User.model.js'
+import jwt from 'jsonwebtoken';
+
 export const signup = async (req, res) => {
     const { email, password, fullName } = req.body;
 
@@ -16,18 +19,72 @@ export const signup = async (req, res) => {
 
         const existingUser = await User.findOne({ email });
         if(existingUser){
-            return res.status(400).json({message: "Email already exists"})
+            return res.status(400).json({message: "Email already exists, Please use a different one!!"})
         }
 
-    } catch (error) {
+        const idx = Math.floor(Math.random() * 100) + 1;
+        const randomAvatar = `https://avatar.iran.liara.run/public/${idx}.png`;
 
+        const newUser = await User.create({
+            email,
+            fullName,
+            password,
+            profilePic: randomAvatar,
+        })
+
+        const token = jwt.sign({userId: newUser._id}, process.env.JWT_SECRET_KEY, { expiresIn : "3d" });
+        res.cookie("jwt", token, {
+            maxAge: 1000*60*60*24*3,
+            httpOnly: true,
+            sameSite: "strict",
+            secure: process.env.NODE_ENV === 'production'
+        })
+
+        return res.status(201).json({
+            success: true,
+            user: newUser
+        })
+
+    } catch (error) {
+        console.log('error: ',error);
+        return res.status(500).json({message: "Internal Server Error"})
     }
 }
 
 export const login = async (req, res) => {
-    res.send('login');
+    try{
+        const { email, password } = req.body;
+
+        if(!email || !password){
+            return res.status(400).json({ message: "All fields are required !!"});
+        }
+
+        const user = await User.findOne({email});
+        if(!user) return res.status(401).json({ message: "Invalid email"});
+
+        const isPasswordCorrect = await user.comparePassword(password);
+        if(!isPasswordCorrect) return res.status(401).json({message: "Invalid Password"});
+
+        const token = jwt.sign({userId: user._id}, process.env.JWT_SECRET_KEY, { expiresIn : "3d" });
+        res.cookie("jwt", token, {
+            maxAge: 1000*60*60*24*3,
+            httpOnly: true,
+            sameSite: "strict",
+            secure: process.env.NODE_ENV === 'production'
+        })
+
+        return res.status(201).json({
+            success: true,
+            user
+        })
+
+    } catch (err) {
+        console.log(`Error in login controller: ${err}`);
+        return res.status(500).json({message: "Internal Server Error"});
+    }
 }
 
 export const logout = async (req, res) => {
-    res.send('logout');
+    res.clearCookie("jwt");
+    res.status(200).json({success: true, message: "Logout Successful"});
 }

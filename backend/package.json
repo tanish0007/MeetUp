@@ -13,14 +13,13 @@
   "type": "module",
   "dependencies": {
     "bcryptjs": "^3.0.2",
-    "body-parser": "^2.2.0",
     "cors": "^2.8.5",
-    "crypto": "^1.0.1",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.16.5",
     "nodemailer": "^7.0.5",
-    "socket.io": "^4.8.1"
+    "socket.io": "^4.8.1",
+    "stream-chat": "^8.60.0"
   }
 }

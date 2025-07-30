@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@stream-io/video-react-sdk": "^1.19.1",
+    "@tanstack/react-query": "^5.83.0",
     "autoprefixer": "^10.4.21",
     "axios": "^1.11.0",
     "lucide-react": "^0.534.0",
@@ -18,6 +20,8 @@
     "react-dom": "^19.1.0",
     "react-hot-toast": "^2.5.2",
     "react-router": "^7.7.1",
+    "stream-chat": "^9.13.0",
+    "stream-chat-react": "^13.3.0",
     "tailwindcss": "^3.4.17",
     "zustand": "^5.0.6"
   },

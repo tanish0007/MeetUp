@@ -1,6 +1,6 @@
 import useAuthUser from "../hooks/useAuthUser";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { completeOnboarding } from "../api/onboarding";
+import { completeOnboarding } from "../lib/api.js";
 import { LoaderIcon, MapPinIcon, ShipWheelIcon, ShuffleIcon, CameraIcon } from "lucide-react";
 import { LANGUAGES } from "../constants";
 

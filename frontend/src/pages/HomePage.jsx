@@ -16,7 +16,7 @@ const HomePage = () => {
     queryFn: getUserFriends,
   })
 
-  const {data: recommendedUsers=[], isLoading: loadingRecommendedUsers} = useQuery({
+  const {data: recommendedUsers=[], isLoading: loadingUsers} = useQuery({
     queryKery: ['users'],
     queryFn: getRecommendedUsers,
   })

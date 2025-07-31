@@ -12,12 +12,12 @@ const HomePage = () => {
   const {outgoingRequestsIds, setOutgoingRequestsIds} = useState(new Set());
 
   const {data: friends=[], isLoading: loadingFriends} = useQuery({
-    queryKery: ['friends'],
+    queryKey: ['friends'],
     queryFn: getUserFriends,
   })
 
   const {data: recommendedUsers=[], isLoading: loadingUsers} = useQuery({
-    queryKery: ['users'],
+    queryKey: ['users'],
     queryFn: getRecommendedUsers,
   })
 

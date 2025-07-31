@@ -5,6 +5,7 @@ import { LoaderIcon, MapPinIcon, ShipWheelIcon, ShuffleIcon, CameraIcon } from "
 import { LANGUAGES } from "../constants";
 
 import toast from "react-hot-toast";
+import { useState } from "react";
 
 
 const OnboardingPage = () => {

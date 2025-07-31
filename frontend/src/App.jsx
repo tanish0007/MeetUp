@@ -12,7 +12,7 @@ import { Toaster } from "react-hot-toast";
 
 import PageLoader from "./components/PageLoader.jsx";
 import useAuthUser from "./hooks/useAuthUser.js";
-import { Layout } from "./components/Layout.jsx";
+import Layout from "./components/Layout.jsx";
 
 import { useThemeStore } from "./store/useThemeStore.js";
 
@@ -43,16 +43,14 @@ const App = () => {
         <Route
           path="/signup"
           element={
-            !isAuthenticated ? <SignUpPage /> : <Navigate to={
-            isOnboarded ? "/" : "/onboarding"
-          } />}
+            !isAuthenticated ? <SignUpPage /> : <Navigate to={isOnboarded ? "/" : "/onboarding"} />
+          }
         />
         <Route
           path="/login"
           element={
-            !isAuthenticated ? <LoginPage /> : <Navigate to={
-            isOnboarded ? "/" : "/onboarding"
-          } />}
+            !isAuthenticated ? <LoginPage /> : <Navigate to={isOnboarded ? "/" : "/onboarding"} />
+          }
         />
         <Route
           path="/notifications"
@@ -62,7 +60,7 @@ const App = () => {
                 <NotificationsPage />
               </Layout>
             ) : (
-              <Navigate to={!isAuthenticated ? '/login' : '/onboarding'} />
+              <Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />
             )
           }
         />
@@ -76,11 +74,12 @@ const App = () => {
             )
           }
         />
+
         <Route
           path="/chat/:id"
           element={
             isAuthenticated && isOnboarded ? (
-              <Layout>
+              <Layout showSidebar={false}>
                 <ChatPage />
               </Layout>
             ) : (
@@ -88,11 +87,12 @@ const App = () => {
             )
           }
         />
+
         <Route
           path="/onboarding"
           element={
             isAuthenticated ? (
-              isOnboarded ? (
+              !isOnboarded ? (
                 <OnboardingPage />
               ) : (
                 <Navigate to="/" />
@@ -103,6 +103,7 @@ const App = () => {
           }
         />
       </Routes>
+
       <Toaster />
     </div>
   );

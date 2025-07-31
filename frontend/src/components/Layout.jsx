@@ -1,7 +1,7 @@
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 
-export const Layout = ({ children, showSidebar = false }) => {
+const Layout = ({ children, showSidebar = false }) => {
   return (
     <div className="min-h-screen">
       <div className="flex">
@@ -16,3 +16,5 @@ export const Layout = ({ children, showSidebar = false }) => {
     </div>
   );
 };
+
+export default Layout;

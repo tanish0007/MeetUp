@@ -4,6 +4,7 @@ import { BellIcon, LogOutIcon } from "lucide-react";
 import { Link as Connection } from "lucide-react";
 import ThemeSelector from "./ThemeSelector";
 import useLogout from "../hooks/useLogout";
+import { Link } from 'react-router';
 
 const Navbar = () => {
   const { authUser } = useAuthUser();

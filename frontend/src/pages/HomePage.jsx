@@ -9,7 +9,7 @@ import { capitialize } from "../lib/utils";
 
 const HomePage = () => {
   const queryClient = useQueryClient();
-  const {outgoingRequestsIds, setOutgoingRequestsIds} = useState(new Set());
+  const [outgoingRequestsIds, setOutgoingRequestsIds] = useState(new Set());
 
   const {data: friends=[], isLoading: loadingFriends} = useQuery({
     queryKey: ['friends'],

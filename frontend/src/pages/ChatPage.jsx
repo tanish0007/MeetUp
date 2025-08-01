@@ -14,9 +14,9 @@ const STREAM_API_KEY = import.meta.env.VITE_STREAM_API_KEY;
 const ChatPage = () => {
   const { id: targetUserId } = useParams();
 
-  const {chatClient, setChatClient} = useState(null);
-  const {channel, setChannel} = useState(null);
-  const {loading, setLoading} = useState(true);
+  const [chatClient, setChatClient] = useState(null);
+  const [channel, setChannel] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const {authUser} = useAuthUser();
 

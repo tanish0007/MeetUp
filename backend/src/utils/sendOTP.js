@@ -10,7 +10,7 @@ export const sendOtpEmail = async (email, otp) => {
   });
 
   const mailOptions = {
-    from: process.env.EMAIL_USER,
+    from: `MEETUP <noreply.meetup@gmail.com>`,
     to: email,
     subject: 'Verify your Email with OTP',
     html: `<p>Your OTP is <strong>${otp}</strong>. It expires in 10 minutes.</p>`,

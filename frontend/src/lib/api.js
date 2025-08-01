@@ -5,6 +5,15 @@ export const signup = async (signupData) => {
   return response.data;
 };
 
+export const sendOtp = async (email) => {
+  return await axiosInstance.post("/auth/send-otp", { email });
+};
+
+export const verifyOtp = async ({ email, otp }) => {
+  return await axiosInstance.post("/auth/verify-otp", { email, otp });
+};
+
+
 export const login = async (loginData) => {
   const response = await axiosInstance.post("/auth/login", loginData);
   return response.data;

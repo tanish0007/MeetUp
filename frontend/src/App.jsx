@@ -7,6 +7,7 @@ import ChatPage from "./pages/ChatPage.jsx";
 import CallPage from "./pages/CallPage.jsx";
 import OnboardingPage from "./pages/OnboardingPage.jsx";
 import NotificationsPage from "./pages/NotificationsPage.jsx";
+import NotFoundPage from "./pages/NotFoundPage.jsx";
 
 import { Toaster } from "react-hot-toast";
 
@@ -123,6 +124,11 @@ const App = () => {
               <Navigate to="/login" />
             )
           }
+        />
+
+        <Route 
+          path = '*'
+          element = {<NotFoundPage />}
         />
       </Routes>
 

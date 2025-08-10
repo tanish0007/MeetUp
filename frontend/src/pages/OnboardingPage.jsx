@@ -39,8 +39,7 @@ const OnboardingPage = () => {
   }
 
   const handleRandomAvatar = () => {
-    const idx = Math.floor(Math.random() * 99999); // 1-100 included
-    // const randomAvatar = `https://avatar.iran.liara.run/public/${idx}.png`;
+    const idx = Math.floor(Math.random() * 99999);
     const randomAvatar = `https://api.dicebear.com/9.x/avataaars/png?seed=${idx}&radius=50`;
 
     setFormState({ ...formState, profilePic: randomAvatar });

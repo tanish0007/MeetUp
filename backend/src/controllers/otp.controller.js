@@ -18,7 +18,7 @@ export const sendOtp = async (req, res) => {
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if(!emailRegex.test(email)){
-      return res.status(400).json({messages: "Invalid email format"});
+      return res.status(400).json({message: "Invalid email format"});
     }
 
     const otp = generateOtp();

@@ -16,6 +16,11 @@ export const sendOtp = async (req, res) => {
       return res.status(400).json({ message: "Email already in use" });
     }
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if(!emailRegex.test(email)){
+      return res.status(400).json({messages: "Invalid email format"});
+    }
+
     const otp = generateOtp();
     const hashedOtp = crypto.createHash('sha256').update(otp).digest('hex');
 

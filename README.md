@@ -1,8 +1,6 @@
 # 🌍 MeetUp - Social Networking Chatting Application
 
 <div align="center">
-  <img src="https://api.dicebear.com/9.x/avataaars/png?seed=meetup&radius=50" alt="MeetUp Logo" width="150"/>
-  
   ### Connect with Language Partners Worldwide
   
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

@@ -1,6 +1,7 @@
 # 🌍 MeetUp - Social Networking Chatting Application
 
 <div align="center">
+
   ### Connect with Language Partners Worldwide
   
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -8,24 +9,6 @@
   [![React](https://img.shields.io/badge/React-19.1.0-blue.svg)](https://reactjs.org/)
   [![MongoDB](https://img.shields.io/badge/MongoDB-Database-green.svg)](https://www.mongodb.com/)
 </div>
-
----
-
-## 📖 Table of Contents
-
-- [Overview](#overview)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Environment Variables](#environment-variables)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
-
----
 
 ## 🎯 Overview
 

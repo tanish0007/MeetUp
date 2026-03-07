@@ -1,4 +1,3 @@
-
 import { Link as Connection } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router";
@@ -23,6 +22,30 @@ const LoginPage = () => {
       className="h-screen flex items-center justify-center p-4 sm:p-6 md:p-8"
       data-theme="sunset"
     >
+
+      {/* TOP-LEFT: Mailing service notice */}
+      <div className="fixed bottom-3 left-50 z-50 max-w-xs bg-warning/20 border border-warning/50 text-warning-content rounded-lg px-3 py-2 shadow-md backdrop-blur-sm">
+        <p className="text-xs font-medium leading-snug text-white">
+          ⚠️ Mailing service is currently not working. Please use the provided credentials to log in and explore the app.
+        </p>
+      </div>
+
+      {/* TOP-RIGHT: Demo credentials */}
+      <div className="fixed top-3 right-3 z-50 bg-base-100/90 border border-white rounded-lg px-4 py-3 shadow-md backdrop-blur-sm text-xs space-y-2 max-w-[220px]">
+        <p className="font-semibold text-sm opacity-80">🔑 Demo Credentials</p>
+        <div className="space-y-1">
+          <p className="font-medium opacity-70">User 1</p>
+          <p className="font-mono break-all opacity-90">jangratanish0007@gmail.com</p>
+          <p className="font-mono opacity-90">Password: 12345678</p>
+        </div>
+        <div className="divider my-1 opacity-30"></div>
+        <div className="space-y-1">
+          <p className="font-medium opacity-70">User 2</p>
+          <p className="font-mono break-all opacity-90">sharmatanish0000007@gmail.com</p>
+          <p className="font-mono opacity-90">Password: 12345678</p>
+        </div>
+      </div>
+
       <div className="border border-primary/25 flex flex-col lg:flex-row w-full max-w-5xl mx-auto bg-base-100 rounded-xl shadow-lg overflow-hidden">
         {/* LOGIN FORM SECTION */}
         <div className="w-full lg:w-1/2 p-4 sm:p-8 flex flex-col">
